@@ -1,0 +1,17 @@
+INDEX VERSION 1.131+C:\Users\jortegam\Desktop\Trastero\Cursillos_y_charlas\Java\Streams\.metadata\.plugins\org.eclipse.jdt.core
+2026394173.index
+3079427731.index
+3303470496.index
+950792290.index
+646725631.index
+1000178894.index
+1392611847.index
+1972656191.index
+454943660.index
+2639982179.index
+2330222658.index
+2319664316.index
+2326821285.index
+1285469568.index
+1981914619.index
+643947727.index
