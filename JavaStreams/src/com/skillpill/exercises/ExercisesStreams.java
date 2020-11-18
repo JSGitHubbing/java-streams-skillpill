@@ -1,10 +1,7 @@
 package com.skillpill.exercises;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import com.skillpill.utils.User;
 
@@ -16,7 +13,6 @@ public class ExercisesStreams {
 	 * "startingCharacter"
 	 */
 	public static void printTheList(final List<User> userList) {
-		userList.forEach(System.out::println);
 	}
 
 	/**
@@ -25,7 +21,6 @@ public class ExercisesStreams {
 	 * Find if there is an user with the name equals to "nameToFind"
 	 */
 	public static boolean isNameInTheList(final List<User> userList, final String nameToFind) {
-		return userList.stream().anyMatch(u -> u.getName().equals(nameToFind));
 	}
 
 	/**
@@ -36,8 +31,6 @@ public class ExercisesStreams {
 	 */
 	public static List<User> getUsersWithStartingCharacter(final List<User> userList, final String startingCharacter) {
 
-		return userList.stream().filter(u -> u.getName().charAt(0) == startingCharacter.toUpperCase().charAt(0))
-				.collect(Collectors.toList());
 	}
 
 	/**
@@ -47,7 +40,6 @@ public class ExercisesStreams {
 	 * city should be Uppercase
 	 */
 	public static List<String> getUppercaseCities(final List<User> userList) {
-		return userList.stream().map(u -> u.getCity().toUpperCase()).collect(Collectors.toList());
 	}
 
 	/**
@@ -60,7 +52,6 @@ public class ExercisesStreams {
 	 * Get the number of Users that live in the "targetCity"
 	 */
 	public static long usersLivingInCity(final List<User> userList, final String targetCity) {
-		return userList.stream().filter(u -> u.getCity().equals(targetCity)).count();
 	}
 
 	/**
@@ -69,7 +60,6 @@ public class ExercisesStreams {
 	 * Get a list of the names of the users, no duplicates
 	 */
 	public static List<String> noDuplicatedNames(final List<User> userList) {
-		return userList.stream().map(u -> u.getName()).distinct().collect(Collectors.toList());
 	}
 
 	/**
@@ -79,8 +69,6 @@ public class ExercisesStreams {
 	 * <city, numberUsers>
 	 */
 	public static Map<String, Long> usersPerCity(final List<User> userList) {
-		return userList.stream().map(u -> u.getCity()).distinct()
-				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 	}
 
 	/**
@@ -90,10 +78,6 @@ public class ExercisesStreams {
 	 * name
 	 */
 	public static List<User> orderFromYoungerToOldest(final List<User> userList) {
-		Comparator<User> myComparator = Comparator.comparing(User::getAge)
-				.thenComparing(Comparator.comparing(User::getName));
-
-		return userList.stream().sorted(myComparator).collect(Collectors.toList());
 	}
 
 }
